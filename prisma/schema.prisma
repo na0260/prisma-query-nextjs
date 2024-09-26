@@ -16,7 +16,7 @@ datasource db {
 model User {
   id       Int       @id @default(autoincrement())
   email    String    @unique
-  password String    @default("12345678", type: Hash)
+  password String    @default("12345678")
   profile  Profile?
   post     Post[]
   comment  Comment[]
