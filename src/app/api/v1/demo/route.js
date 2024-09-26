@@ -20,4 +20,17 @@ export async function POST(req, res) {
     }catch (e) {
         return NextResponse.json({status: "Failed", data: e});
     }*/
+    // Create Many
+    /*try {
+        const prisma = new PrismaClient();
+        const data = await req.json();
+
+        const result = await prisma.Employee.createMany({
+            data: data
+        });
+
+        return NextResponse.json({status: "Success", data: result});
+    }catch (e) {
+        return NextResponse.json({status: "Failed", data: e});
+    }*/
 }
