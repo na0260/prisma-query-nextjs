@@ -33,4 +33,32 @@ export async function POST(req, res) {
     }catch (e) {
         return NextResponse.json({status: "Failed", data: e});
     }*/
+    // Relational Create
+    /*try {
+        const prisma = new PrismaClient();
+        const result = await prisma.User.create({
+            data:{
+                email:"user1@mail.com",
+                password:"password",
+                profile:{
+                    create:{
+                        firstName:"User",
+                        lastName:"One",
+                        mobile:"1234567890",
+                        city:"City",
+                    }
+                },
+                post:{
+                    create:{
+                        title:"User Post Title",
+                        description:"User Post Description",
+                    }
+                }
+            }
+        });
+
+        return NextResponse.json({status: "Success", data: result});
+    }catch (e) {
+        return NextResponse.json({status: "Failed", data: e});
+    }*/
 }
