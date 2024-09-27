@@ -25,6 +25,34 @@ export async function GET(req, res) {
     }catch (e) {
         return NextResponse.json({status: "Failed", data: e});
     }*/
+
+    // Group By and Having
+    /*try {
+        const prisma = new PrismaClient();
+        const result = await prisma.Employee.groupBy({
+            by:["city"],
+            _count:true,
+            _sum:{
+                salary:true
+            },
+            _avg:{
+                salary:true
+            },
+            _min:{
+                salary:true
+            },
+            _max:{
+                salary:true
+            },
+            having:{
+                city:"Dhaka"
+            }
+        });
+
+        return NextResponse.json({status: "Success", data: result});
+    }catch (e) {
+        return NextResponse.json({status: "Failed", data: e});
+    }*/
 }
 
 export async function POST(req, res) {
