@@ -2,7 +2,29 @@ import {NextResponse} from "next/server";
 import {PrismaClient} from "@prisma/client";
 
 export async function GET(req, res) {
+    // Aggregate
+    /*try {
+        const prisma = new PrismaClient();
+        const result = await prisma.Employee.aggregate({
+            _sum:{
+                salary:true
+            },
+            _avg:{
+                salary:true
+            },
+            _min:{
+                salary:true
+            },
+            _max:{
+                salary:true
+            },
+            _count:true
+        });
 
+        return NextResponse.json({status: "Success", data: result});
+    }catch (e) {
+        return NextResponse.json({status: "Failed", data: e});
+    }*/
 }
 
 export async function POST(req, res) {
