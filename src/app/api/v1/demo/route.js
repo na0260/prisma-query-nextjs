@@ -53,6 +53,31 @@ export async function GET(req, res) {
     }catch (e) {
         return NextResponse.json({status: "Failed", data: e});
     }*/
+
+    // Transaction & Rollback
+    /*try {
+        const prisma = new PrismaClient();
+        const userCreate = prisma.User.create({
+            data:{
+                email:"newuser@mail.com",
+            }
+        });
+
+        const employeeCreate = prisma.Employee.create({
+            data:{
+                name:"New Employee",
+                designation:"Software Engineer",
+                city:"Dhaka",
+                salary:10000
+            }
+        });
+
+        const result = await prisma.$transaction([userCreate, employeeCreate]);
+
+        return NextResponse.json({status: "Success", data: result});
+    }catch (e) {
+        return NextResponse.json({status: "Failed", data: e});
+    }*/
 }
 
 export async function POST(req, res) {
